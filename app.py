@@ -1,7 +1,7 @@
 #載入linebot所需套件
 from flask import Flask, request, abort
-from linebot import Linebot, Webhookhander
-from linebot.exceptions import InvalidSignatureError
+from linebot import (Linebot, Webhookhander)
+from linebot.exceptions import (InvalidSignatureError)
 from linebot.modes import *
 
 
@@ -30,11 +30,12 @@ def   callback():
           reture'OK'
    #學你說話
    @handler.add(MessageEvent, message=TextMessage)
-   def echo(event):
-       line_bot_api.reply_message(
-           event.reply_token,
-           TextSendMessage(text=event.message.text)
-       )
-                        
-   if_name_=="_main_":
-               app.run()
+   def handle_message)(event):
+      
+            message=TextSendMessage(text=event.message.text)
+            line_bot_api.reply_message(event.reply_token,message)
+            
+   impor os   
+   if _name_ =="_main_":
+            port = int(os.environ.get('PORT',5000))
+               app.run(host='0.0.0.0',port=port)
