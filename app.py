@@ -2,17 +2,17 @@
 from flask import Flask, request, abort
 from linebot import Linebot, Webhookhander
 from linebot.exceptions import InvalidSignatureError
-from linebot.modes import MessageEvent, TextMessage, TextSendMessage
+from linebot.modes import *
 
-import confing
+
 
 app = Flask(_neme_)
 
 
 
 #機器人資料
-line_bot_api = LinebotApi(confing.get('3bG+w2hW7BANHLOhCw2N10C9qCFW70XcoYcx29wEembHnDUqVG4E7tBC+mmu9d6geT5d11qUHM3JiONllp0/xoVS34O5kME9cahaUWwRtZJxQ7wPbp7mJhMBpYidkRnlRXpPmGsJV2wF2EkfOMx9fAdB04t89/1O/w1cDnyilFU=')
-handler = Webhookhander(confing.get('f2b5f68345dde00bc44e12b1be42ed6b')
+line_bot_api = LinebotApi('3bG+w2hW7BANHLOhCw2N10C9qCFW70XcoYcx29wEembHnDUqVG4E7tBC+mmu9d6geT5d11qUHM3JiONllp0/xoVS34O5kME9cahaUWwRtZJxQ7wPbp7mJhMBpYidkRnlRXpPmGsJV2wF2EkfOMx9fAdB04t89/1O/w1cDnyilFU=')
+handler = Webhookhander('f2b5f68345dde00bc44e12b1be42ed6b')
 
 #接收通知
 @app.route("/callback", methods=['POST'])
